@@ -7,10 +7,13 @@ const User = db.define("User",{
     id:{
         type:DataTypes.UUID,
         primaryKey:true,
-        defaultValue:Sequelize.UUID
+        defaultValue:Sequelize.UUIDV4
     },
     name:{
         type:DataTypes.STRING
+    },
+    password:{
+       type:DataTypes.STRING
     },
     emailId:{
         type:DataTypes.STRING,
@@ -25,13 +28,13 @@ const User = db.define("User",{
     },
     type:{
         type:DataTypes.STRING,
-        validate:{is:/^(trainer|user)/}
+        validate:{is:/^(trainer|user)$/}
     }
 
 },{
     freezeTableName:true
 });
 
-User.sync({alter:true});
+User.sync({alter:true})
 
 module.exports=User
