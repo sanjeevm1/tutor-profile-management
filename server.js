@@ -3,6 +3,8 @@ require("dotenv").config();
 
 const app = express();
 
+app.use(express.json());
+
 app.listen(process.env.PORT, (err) => {
   if (err) {
     console.log("error");
