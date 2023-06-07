@@ -42,7 +42,25 @@ const signUp = {
         dob:{type:"string",format:"date"},
         mobileNo:{type:"string",format:"mobileNo"}
     },
-    required:["name","type","emailId","password","dob","mobileNo"]
+    required:["name","type","emailId","password","dob","mobileNo"],
+    additionalProperties:false
+}
+
+const login={
+
+    type:"object",
+    properties:{
+        emailId:{
+            type:"string",
+            format:"emailId"
+        },
+        password:{
+            type:"string"
+        }
+    },
+    required:["emailId","password"],
+    additionalProperties:false
 }
 
 module.exports.isValidSignUp = ajv.compile(signUp)
+module.exports.isValidLogin = ajv.compile(login)
