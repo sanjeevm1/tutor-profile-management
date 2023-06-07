@@ -1,7 +1,8 @@
 
 const {Sequelize} = require('sequelize');
+require("dotenv").config();
 
-const db = new Sequelize("postgres://profile_n8qp_user:RwndJaNjbYigFvllSUQko4cJzvXpxnvk@dpg-chu901e7avj345bm2i5g-a.oregon-postgres.render.com/profile_n8qp?sslmode=no-verify");
+const db = new Sequelize(process.env.DB_URL);
 
 try{
     db.authenticate();
