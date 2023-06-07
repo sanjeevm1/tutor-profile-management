@@ -1,4 +1,5 @@
 
+const { hashPassWord } = require("../../util/hashing.js");
 const User = require("../model/User.js");
 
 async function isEmailExist(email){
@@ -14,4 +15,6 @@ async function isEmailExist(email){
  
 }
 
-module.exports.isEmailExist=isEmailExist
+
+
+module.exports.isEmailExist=isEmailExist;
