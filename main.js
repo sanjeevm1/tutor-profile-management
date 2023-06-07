@@ -6,6 +6,6 @@ require("./db/model/Education.js");
 require("./db/model/Portfolio.js");
 
 app.use((req,res,next)=>{
-    require("./routes/signup.js");
+    require("./routes/auth.js");
     next();
 })
